@@ -65,6 +65,29 @@ public class Main {
             driver.close();
         }
 
+    @Test
+
+    public void handMouseHover1() throws InterruptedException {
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://rahulshettyacademy.com/AutomationPractice/");
+        Actions actions = new Actions(driver);
+        ((JavascriptExecutor) driver).executeScript("scroll(0,900) ");
+        Thread.sleep(2000);
+        WebElement element = driver.findElement(By.id("mousehover"));
+        Thread.sleep(2000);
+        actions.moveToElement(element).build().perform();
+        WebElement element1 = driver.findElement(By.linkText("Top"));
+        element1.click();
+        ((JavascriptExecutor) driver).executeScript("scroll(0,900) ");
+        actions.moveToElement(element).build().perform();
+        WebElement element2 = driver.findElement(By.linkText("Reload"));
+        element2.click();
+        driver.close();
+
+
+    }
+
 
 
 
